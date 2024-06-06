@@ -22,5 +22,6 @@
   "name": "Web Player",
   "short_name": "webplayer",
   "start_url": "https://web-player-azure.vercel.app/",
-  "scope": "https://web-player-azure.vercel.app/"
+  "scope": "https://web-player-azure.vercel.app/",
+  "description": "Web Media player to stream HLS stream directly on browser"
 }
