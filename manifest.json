@@ -21,6 +21,6 @@
   "lang": "en-US",
   "name": "Web Player",
   "short_name": "webplayer",
-  "start_url": "http://localhost:5173",
-  "scope": "http://localhost:5173"
+  "start_url": "https://web-player-azure.vercel.app/",
+  "scope": "https://web-player-azure.vercel.app/"
 }
