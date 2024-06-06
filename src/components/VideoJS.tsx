@@ -1,18 +1,30 @@
 import { useEffect, useRef } from "react";
 import videojs from "video.js";
-import { VideoJsPlayerOptions } from "video.js";
+
 import Player from "video.js/dist/types/player";
 import "video.js/dist/video-js.css";
 import "videojs-mobile-ui/dist/videojs-mobile-ui.css";
 import "videojs-mobile-ui";
 import "videojs-hls-quality-selector";
 
+export interface VideoJsPlayerOptions {
+  autoplay?: boolean;
+  controls?: boolean;
+  responsive?: boolean;
+  fluid?: boolean;
+  muted?: boolean;
+  preload?: "none" | "auto" | "metadata" | undefined;
+  sources: {
+    src: string;
+    type: string;
+  }[];
+}
 type VideoJSProps = {
   options: VideoJsPlayerOptions;
   onReady: (player: Player) => void;
 };
 export const VideoJS = (props: VideoJSProps) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLDivElement | null>(null);
   const playerRef = useRef<Player | null>(null);
   const { options, onReady } = props;
 

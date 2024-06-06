@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import VideoJS from "./VideoJS";
+import VideoJS, { VideoJsPlayerOptions } from "./VideoJS";
 import videojs from "video.js";
 import Player from "video.js/dist/types/player";
 import ArrowBackSharp from "@mui/icons-material/ArrowBackSharp";
@@ -20,7 +20,7 @@ export default function VideoPlayer() {
   const navigate = useNavigate();
   const { mediaURL } = state;
 
-  const videoJsOptions = {
+  const videoJsOptions: VideoJsPlayerOptions = {
     autoplay: true,
     controls: true,
     responsive: true,

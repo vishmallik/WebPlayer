@@ -1,15 +1,38 @@
-import Home from "./components/Home";
-import VideoPlayer from "./components/VideoPlayer";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import { Suspense, lazy } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+const Home = lazy(() => import("./components/Home"));
+const VideoPlayer = lazy(() => import("./components/VideoPlayer"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense
+        fallback={
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        }
+      >
+        <Home />
+      </Suspense>
+    ),
   },
   {
     path: "/player",
-    element: <VideoPlayer />,
+    element: (
+      <Suspense
+        fallback={
+          <Box sx={{ display: "flex" }}>
+            <CircularProgress />
+          </Box>
+        }
+      >
+        <VideoPlayer />
+      </Suspense>
+    ),
   },
 ]);
 
